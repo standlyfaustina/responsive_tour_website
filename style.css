@@ -126,9 +126,9 @@ nav{
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -3px;
     width: 100%;
-    height: 12.7rem;
+    height: 10.7rem;
     background: url("images/wave-small.png") center no-repeat;
     background-size: cover;
 }
@@ -206,8 +206,9 @@ nav{
 .activites-grid-item{
     height: 40rem;
     padding: 5rem;
-    color: #fafafa;
+    color:#fafafa;
     position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
@@ -221,4 +222,229 @@ nav{
     left: 0;
     width: 100%;
     height: 100%; 
+    background-image: linear-gradient(135deg, rgba(49,24,131,0.9) 0%, rgba(72,56,149,0.8) 100%);
+    z-index: -1;
 }
+
+.star-gazing{
+    background: url("images/stars.jpg") center no-repeat;
+}
+
+.hiking{
+    background: url("images/hiking.jpg") center no-repeat;
+}
+
+.camping{
+    background: url("images/camping.jpg") center no-repeat;
+}
+
+.activites-grid-item i{
+    font-size: 4rem;
+    color: #eb648c;
+
+}
+
+.activites-grid-item h1{
+    font-family: 'Aldrich', sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+/* testimonials */
+
+.testimonials{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, rgba(49,24,131,0.9) 0%,
+     rgba(72,56,149,0.8) 100%),url("images//testimonials-bg.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+   
+}
+
+.testimonials::before{
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background: url("images/wave-small-reversed.png") center no-repeat;
+    background-size: cover;
+}
+
+.testimonial{
+    width: 100%;
+    color: #fafafa;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /*  display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.testimonial-text-box{
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.testimonial-text-box i{
+    position: absolute;
+    top: -8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    color: #eb648c;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.testimonial-customer img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    border: 3px solid #eb648c;
+}
+
+/* adventure section */
+
+.adventure-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.adventure-grid-item p{
+    color: rgba(0,0,0,0.7);
+}
+
+footer{
+    padding: 2.5rem;
+    background-color: #d7d4ed;
+    color: rgba(0,0,0,0.7);
+}
+
+/* media queries */
+
+@media screen and (min-width:350px){
+    .main-message{
+        transform: translateY(40%);
+    }
+}
+@media screen and (min-width:470px){
+     .hero::before{
+         height: 9.4rem;
+         background: url(images/wave-medium.png);
+         background-size: cover;
+     }
+
+     .testimonials::before{
+         height: 9.4rem;
+         background: url(images/wave-medium.png);
+         background-size: cover;
+     }
+}
+
+@media screen and (min-width:700px){
+    header{
+        height: 8rem;
+    }
+
+    .nav-brand{
+        width: 3.5rem;
+    }
+
+    .nav-list{
+        width: initial;
+        height: initial;
+        background: transparent;
+        position: initial;
+        top: initial;
+        right: initial;
+        flex-direction: row;
+        transition: initial;
+    }
+
+    .menu-icons{
+        display: none;
+    }
+
+    .nav-item{
+        margin:  0 2.5rem;
+    }
+
+    .nav-link,
+    .current{
+        color: #fafafa;
+        font-size: 1.3rem;
+        position: relative;
+    }
+
+
+    .nav-link::before,
+    .current::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        background-color: #eb648c;
+        width: 100%;
+        height: 2px;
+        transform-origin: left;
+        transition: transform 650ms;
+        transform: scaleX(0);
+    }
+
+    .current::before{
+        transform: scale(1);
+    }
+
+    .nav-link:hover::before{
+        transform: scaleX(1);
+    }
+
+    .hero{
+        height: 60vh;
+    }
+
+    .main-message{
+        transform: translateY(60%);
+    }
+
+    .title-heading h1{
+        font-size: 2.5rem;
+    }
+
+ }
+
+ @media screen and (min-width:950px){
+     .hero::before{
+         height: 22.7rem;
+         background: url("images/wave-large.png");
+         background-size: cover;
+     }
+
+     .testimonials::before{
+         height: 22.7rem;
+         background: url("images/wave-large.png");
+         background-size: cover;
+     }
+
+     .testimonials::before{
+         height: 22.7rem;
+         background: url("images/wave-large-reversed.png");
+         background-size: cover;
+     }
+ }
+
+ @media screen and (min-width:1200px){
+     .hero{
+         height: 75vh;
+     }
+ }
